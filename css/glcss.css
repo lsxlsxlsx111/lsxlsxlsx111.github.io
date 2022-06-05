@@ -1,0 +1,145 @@
+html, body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+#header{
+    position:absolute;
+    left:380px;
+    z-index:99999;
+}
+
+#viewDiv2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    height: 90%;
+    width: 40%;
+}
+
+#viewDiv {
+    position: absolute;
+    top: 0px;
+    right: 300px;
+    padding: 0;
+    margin: 0;
+    height: 90%;
+    width: 40%;
+}
+
+#LayerBox{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-family: "黑体";
+}
+.dropbtn{
+	background-color: #4CAF50;
+	color: black;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+.dropdown {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400
+}
+.dropdown-content{
+    display: inline-block;
+    float: left;
+    overflow-x: auto;
+    height: 200px;
+}
+.dropdown2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400
+}
+.dropdown2-content{
+    display: inline-block;
+    float: left;
+    overflow-x: auto;
+    height: 300px;
+}
+
+
+
+/*.dropdown:hover .dropdown-content {*/
+/*    display: inline-block;*/
+/*}*/
+
+.button_Add{
+    margin-left: 5px;
+    float: left;
+    background-color: green;
+    border: 1px solid lightgreen;
+    color: white;
+    border-radius:5px ;
+    opacity: 0.8;
+}
+
+.button_Remove{
+    margin-left: 5px;
+    float: left;
+    position:initial;
+    background-color: red;
+    border: 1px solid red;
+    color: white;
+    border-radius:5px ;
+    opacity: 0.8;
+}
+
+.SingleBox{
+
+    margin-top: 0px;
+    margin-left: 10px;
+}
+
+#Layers{
+    /*float:left;*/
+    margin-left: 20px;
+    color: dimgray;
+}
+
+#BaseMap_div{
+    position:absolute;
+    top: 0px;
+    right: 150px;
+    border: 5px;
+    border-color: black;
+    border-radius: 10%;
+	font-family: "黑体";
+}
+
+#coor_scale{
+    position: absolute;
+	top: 680px;
+    left: 1px;
+    bottom: 20px;
+}
+#overviewDiv {
+	position: absolute;
+	top: 200px;
+	left: 12px;
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+	overflow: hidden;
+}
+
+#extentDiv {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+}
+
+#svg01{
+    position: absolute;
+    top: 340px;
+    right: 10px;
+    font-family: "黑体";

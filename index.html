@@ -1,0 +1,138 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <title>美国灾害影响可视化</title>
+
+    <style>
+
+    </style>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.19/esri/themes/light/main.css">
+	<link rel="stylesheet" href="css/glcss.css">
+    <script src="https://js.arcgis.com/4.19/"></script>
+    <script src="js/link.js"></script>	
+
+    <script>
+
+    </script>
+
+</head>
+
+<body>
+<div>
+	<div id="header" style="background-color:null;">
+	<h1 style="margin-bottom:0;">美国灾情可视化</h1></div>
+    <div id="viewDiv2"></div>
+	<div id="overviewDiv"><div id="extentDiv"></div>
+    </div>
+    <div id="viewDiv"></div>
+<!--    加入图层-->
+    <div id="LayerBox">
+        <p class="dropdown">灾害可视化</p>
+        <div class="dropdown-content">
+			<div class="SingleBox">
+			    <p>地震可视化</p>
+			    <input type="button" id="Add_layer1" class="button_Add" value="加入">
+			    <input type="button" id="Remove_layer1" class="button_Remove" value="删除">
+			    <br/>
+			    <img src="img/pop.png"
+			        height="100px" width="110px">
+			</div>
+            <div class="SingleBox">
+                <p>飓风可视化</p>
+                <input type="button" id="Add_layer2" class="button_Add" value="加入">
+                <input type="button" id="Remove_layer2" class="button_Remove" value="删除">
+                <br/>
+                <img src="img/wind.png"
+                     height="100px" width="110px">
+            </div>
+            <div class="SingleBox">
+                <p>商业损失可视化</p>
+                <input type="button" id="Add_layer3" class="button_Add" value="加入">
+                <input type="button" id="Remove_layer3" class="button_Remove" value="删除">
+                <br/>
+                <img src="img/temp.png" 
+                    height="100px" width="110px">
+            </div>
+            <div class="SingleBox">
+                <p>火灾可视化</p>
+                <input type="button" id="Add_layer4" class="button_Add" value="加入">
+                <input type="button" id="Remove_layer4" class="button_Remove" value="删除">
+                <br/>
+                <img src="img/sy.png"
+                    height="100px" width="110px">
+            </div>
+            <div class="SingleBox">
+                <p>避难设施可视化</p>
+                <input type="button" id="Add_layer5" class="button_Add" value="加入">
+                <input type="button" id="Remove_layer5" class="button_Remove" value="删除">
+                <br/>
+                <img src="img/rainfall.png"
+                     height="100px" width="110px">
+            </div>
+			
+        </div>
+
+        <div id="Layers">
+        </div>
+    </div>
+<!--切换底图-->
+    <div id="BaseMap_div">
+        <p class="dropdown2">更换底图</p>
+        <div class="dropdown2-content">
+            <input type="radio" id="streets" name="basemap" checked><img src="img/streets.jpg" alt="streets"
+                                                                      height="100px" width="110px" title="streets">
+            <br />
+            <input type="radio" id="hybrid" name="basemap"><img src="img/hybrid.jpg" alt="hybrid"
+                                                             height="100px" width="110px" title="hybrid">
+            <br />
+        </div>
+	
+    </div>
+
+    <div id="zft"></div>
+
+<!--    经纬度坐标 比例尺-->
+    <span id="coor_scale">
+        <div id="coordinateDisplay"></div>
+        <div id="scaleDisplay"></div>
+    </span>
+
+    <svg id="svg01" width=80 height=60>
+    </svg>
+    <script>
+        var w = window.innerWidth
+            || document.documentElement.clientWidth
+            || document.body.clientWidth;
+
+        var h = window.innerHeight
+            || document.documentElement.clientHeight
+            || document.body.clientHeight;
+        w=w*0.2;
+        h=h*0.6;
+
+        var svg=document.getElementById("svg01");
+        svg.setAttribute("width",w);
+        svg.setAttribute("height",h);
+        var rec=new Array();
+        var txt=new Array();
+        for(var i=0;i<30;i++){
+            rec[i]=document.createElement("rect");
+            txt[i]=document.createElement("text");
+            svg.appendChild(rec[i]);
+            svg.appendChild(txt[i]);
+            var rec_h=Math.floor(Math.random()*255);
+            rec[i].outerHTML="<rect x="+(i*w/30)+" y="+(400-rec_h)+" width="+(w/30-5)+" height="+rec_h+" fill='rgb(0,0,"+rec_h+")'>"
+            txt[i].outerHTML="<text x="+(i*w/30+(w/30-5)/2)+" y="+(400-rec_h)+" fill='red'>"+rec_h+"</text>"
+        }
+
+    </script>
+
+
+
+
+</body>
+
+</html>
